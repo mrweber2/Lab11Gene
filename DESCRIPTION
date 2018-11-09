@@ -2,7 +2,7 @@ Package: Lab11Gene
 Version: 0.0
 Date: 2018-11-09
 Title: An S3 Class to Represent a Gene
-Authors: person("Matt", "Weber", email = "mrweber2@illinois.edu",
+Author: person("Matt", "Weber", email = "mrweber2@illinois.edu",
                   role = c("aut", "cre"))
 Maintainer: Matt Weber <mrweber2@illinois.edu>
 Description: This is a demonstration package containing an S3 class representing

@@ -11,7 +11,8 @@ Gene <- function(ID, symbol, ontology, CDS){
   
   # clean out line breaks from CDS and check that it is DNA sequence
   CDS <- gsub("\n", "", CDS)
-  if(nchar(CDS) %% 3 != 0){
+  print(nchar(CDS))
+  if(nchar(CDS) %% 3L != 0){
     stop("Length of protein coding sequence must be a multiple of three.")
   }
   if(!all(strsplit(CDS, "")[[1]] %in% c("A", "C", "G", "T"))){
@@ -30,7 +31,7 @@ proteinLength <- function(object, ...) {
 }
 
 proteinLength.Gene <- function(object, ...) {
-  out <- nchar(object$CDS)
+  out <- nchar(object$CDS) / 3L
   return(out)
 }
 
@@ -38,5 +39,5 @@ proteinLength.Gene <- function(object, ...) {
 print.Gene <- function(object, ...) {
   cat(paste("Gene ID:", object$ID, "\n"),
       paste("Symbol:", object$symbol, "\n"),
-      paste(nchar(object$CDS), "amino acids"))
+      paste(proteinLength(object), "amino acids"))
 }
