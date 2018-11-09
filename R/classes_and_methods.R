@@ -24,16 +24,19 @@ Gene <- function(ID, symbol, ontology, CDS){
   return(out)
 }
 
-proteinLength <- function(object, ...){
+## protein length method
+proteinLength <- function(object, ...) {
   UseMethod("proteinLength", object)
 }
-proteinLength.Gene <- function(object, ...){
-  return(nchar(object$CDS) / 3L)
+
+proteinLength.Gene <- function(object, ...) {
+  out <- nchar(object$CDS)
+  return(out)
 }
 
-print.Gene <- function(x, ...){
-  cat(paste("Gene ID:", x$ID),
-      paste("Symbol:", x$symbol),
-      paste(proteinLength(x), "amino acids"),
-      sep = "\n")
+## print method
+print.Gene <- function(object, ...) {
+  cat(paste("Gene ID:", object$ID, "\n"),
+      paste("Symbol:", object$symbol, "\n"),
+      paste(nchar(object$CDS), "amino acids"))
 }

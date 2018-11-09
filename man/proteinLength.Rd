@@ -5,8 +5,7 @@
 Determine Number of Amino Acids in a Gene
 }
 \description{
-This function takes a Gene object and determines the protein length
-in amino acids
+This function takes a Gene object and determines the length of the amino acid sequence.
 }
 \usage{
 proteinLength(object, ...)

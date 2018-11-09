@@ -5,10 +5,10 @@
 Print out a Gene Object
 }
 \description{
-This methods prints some descriptive information about a Gene object.
+This methods takes a Gene object and prints ID, symbol, and amino acid sequence length.
 }
 \usage{
-\method{print}{Gene}(x, ...)
+\method{print}{Gene}(object, ...)
 }
 
 \arguments{
@@ -20,7 +20,7 @@ Other arguments (none implemented).
 }
 }
 \details{
-The gene ID, symbol, and length in amino acids are printed.
+The print method prints gene ID, symbol, and amino acid sequence length.
 }
 \value{
 Information is printed to the console but no object is returned.
